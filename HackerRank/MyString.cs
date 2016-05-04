@@ -181,15 +181,21 @@ namespace HackerRank
         public static int PalindromeIndex(string str)
         {
             int index = -1;
-            int length = str.Length;
-            for (int i = 0; i < str.Length; i++)
+            int l = str.Length;
+            int hl = (int)Math.Ceiling((double)l / 2);
+
+            for (int i = 0; i < hl; i++)
             {
-                if (str[i] != str[length - i - 1])
+                if (str[i] != str[l - i - 1])
                 {
                     var temp = str.Remove(i, 1);
-                    if (IsPalindrome(temp))
+                    if (IsPalindrome(temp,i))
                     {
                         return i;
+                    }
+                    else
+                    {
+                        return l - i - 1;
                     }
                 }
             }
@@ -197,12 +203,13 @@ namespace HackerRank
             return index;
         }
 
-        private static bool IsPalindrome(string str)
+        private static bool IsPalindrome(string str, int i)
         {
-            int length = str.Length;
-            for (int i = 0; i < str.Length; i++)
+            int l = str.Length;
+            int hl = (int)Math.Ceiling((double)l / 2);
+            for (int j = 0; j < hl; j++)
             {
-                if (str[i] != str[length - 1 - i])
+                if (str[j] != str[l - j - 1])
                 {
                     return false;
                 }
@@ -210,27 +217,32 @@ namespace HackerRank
             return true;
         }
 
-        //public static int PalindromeIndex(string str)
-        //{
-        //    if (string.IsNullOrEmpty(str)) return -1;
-        //    int index = 0;
-        //    int length = str.Length;
-        //    if (length > 100005) return -1;
-        //    int halfLenth = length / 2;
-        //    int[] arr = new int[256];
-        //    for (int i = 0; i < length / 2; i++)
-        //    {
-        //        arr[(int)str[i]]++;
-        //    }
-        //    for (int i = length / 2; i < length; i++)
-        //    {
-        //        arr[(int)str[i]]--;
-        //    }
-        //    for (int i = 0; i < arr.Length; i++)
-        //    {
-        //        index += Math.Abs(arr[i]);
-        //    }
-        //    return index / 2;
-        //}
+        public static void TwoStrings(string str1, string str2)
+        {
+            string result = "NO";
+            bool[] arr = new bool[256];
+            for (int i = 0; i < str1.Length; i++)
+            {
+                arr[(int)str1[i]] = true;
+            }
+            for (int i = 0; i < str2.Length; i++)
+            {
+                if (arr[(int)str2[i]] == true)
+                {
+                    result = "YES";
+                    break;
+                }
+            }
+            Console.WriteLine(result);
+        }
+
+        public static bool IsSubLetter(char c, string str)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (c == str[i]) return true;
+            }
+            return false;
+        }
     }
 }

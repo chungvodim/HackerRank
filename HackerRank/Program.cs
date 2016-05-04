@@ -15,9 +15,20 @@ namespace HackerRank
             var t = Convert.ToInt32(Console.ReadLine());
             for (int i = 1; i <= t; i++)
             {
-                var str = String.Join("", Console.ReadLine().Split());
-                Console.WriteLine(MyString.PalindromeIndex(str));
+                var str1 = String.Join("", Console.ReadLine().Split());
+                var str2 = String.Join("", Console.ReadLine().Split());
+                MyString.TwoStrings(str1,str2);
             }
         }
+
+        //static void Main(string[] args)
+        //{
+        //    string[] lines = File.ReadAllLines("input14.txt");
+        //    for (int i = 1; i < lines.Length; i++)
+        //    {
+        //        var result = MyString.PalindromeIndex(lines[i]);
+        //        Console.WriteLine(String.Format("{0}/{1}/{2}", result, lines[i].Length - result - 1, lines[i].Length));
+        //    }
+        //}
     }
 }
