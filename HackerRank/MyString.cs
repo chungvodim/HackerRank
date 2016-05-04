@@ -209,5 +209,28 @@ namespace HackerRank
             }
             return true;
         }
+
+        //public static int PalindromeIndex(string str)
+        //{
+        //    if (string.IsNullOrEmpty(str)) return -1;
+        //    int index = 0;
+        //    int length = str.Length;
+        //    if (length > 100005) return -1;
+        //    int halfLenth = length / 2;
+        //    int[] arr = new int[256];
+        //    for (int i = 0; i < length / 2; i++)
+        //    {
+        //        arr[(int)str[i]]++;
+        //    }
+        //    for (int i = length / 2; i < length; i++)
+        //    {
+        //        arr[(int)str[i]]--;
+        //    }
+        //    for (int i = 0; i < arr.Length; i++)
+        //    {
+        //        index += Math.Abs(arr[i]);
+        //    }
+        //    return index / 2;
+        //}
     }
 }
