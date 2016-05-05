@@ -321,13 +321,25 @@ namespace HackerRank
 
         }
 
+        private static bool IsFound(int[] arr, int m)
+        {
+            foreach (var item in arr)
+            {
+                if (item > m)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private static int GetMinLength(int[] arr, int n, int m, string str)
         {
             int r = 0;
             int ans = n;
             for (int l = 0; l < n; l++) // 
             {
-                while (arr['A'] > m || arr['C'] > m || arr['T'] > m || arr['G'] > m)
+                while (!IsFound(arr,m))
                 {
                     if (r == n)
                     {
@@ -343,6 +355,5 @@ namespace HackerRank
 
             return ans;
         }
-
     }
 }
