@@ -299,18 +299,17 @@ namespace HackerRank
                 arr[(int)str[i]]++;
             }
 
-            string t = "ACGT";
-            bool ok = true;
-            foreach (char c in t)
+            bool isSteady = true;
+            foreach (var i in arr)
             {
-                if (arr[c] > m)
+                if (i > m)
                 {
-                    ok = false;
+                    isSteady = false;
                     break;
                 }
             }
 
-            if (ok) 
+            if (isSteady) 
             { 
                 Console.WriteLine("0"); 
             }
@@ -322,7 +321,7 @@ namespace HackerRank
 
         }
 
-        private static int GetMinLength(int[] arr, int n, int m, string s)
+        private static int GetMinLength(int[] arr, int n, int m, string str)
         {
             int r = 0;
             int ans = n;
@@ -335,11 +334,11 @@ namespace HackerRank
                         return ans;
                     }
 
-                    arr[s[r]]--;
+                    arr[str[r]]--;
                     r++;
                 }
                 ans = Math.Min(ans, r - l);
-                arr[s[l]]++;
+                arr[str[l]]++;
             }
 
             return ans;
