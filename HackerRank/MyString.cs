@@ -268,5 +268,26 @@ namespace HackerRank
             }
             Console.WriteLine(result);
         }
+
+        public static void MakeItAnagram(string str1, string str2)
+        {
+            int anagram = 0;
+            int l1 = str1.Length;
+            int l2 = str2.Length;
+            int[] arr = new int[256];
+            for (int i = 0; i < l1; i++)
+            {
+                arr[(int)str1[i]]++;
+            }
+            for (int i = 0; i < l2; i++)
+            {
+                arr[(int)str2[i]]--;
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                anagram += Math.Abs(arr[i]);
+            }
+            Console.WriteLine(anagram);
+        }
     }
 }
