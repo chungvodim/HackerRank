@@ -16,8 +16,7 @@ namespace HackerRank
             for (int i = 1; i <= t; i++)
             {
                 var str1 = String.Join("", Console.ReadLine().Split());
-                var str2 = String.Join("", Console.ReadLine().Split());
-                MyString.TwoStrings(str1,str2);
+                MyString.GameOfThrone(str1);
             }
         }
 

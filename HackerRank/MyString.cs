@@ -244,5 +244,29 @@ namespace HackerRank
             }
             return false;
         }
+
+        public static void GameOfThrone(string str)
+        {
+            string result = "YES";
+            int[] arr = new int[256];
+            int numberOfOdds = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                arr[(int)str[i]] ++;
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] % 2 == 1)
+                {
+                    numberOfOdds++;
+                    if (numberOfOdds > 1)
+                    {
+                        result = "NO";
+                        break;
+                    }
+                }
+            }
+            Console.WriteLine(result);
+        }
     }
 }
