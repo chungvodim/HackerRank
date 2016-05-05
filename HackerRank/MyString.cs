@@ -294,19 +294,17 @@ namespace HackerRank
         {
             int n = str.Length;
             int[] arr = new int[256];
+            bool isSteady = true;
+
             for (int i = 0; i < n; i++)
             {
                 arr[(int)str[i]]++;
             }
 
-            bool isSteady = true;
-            foreach (var i in arr)
+            for (int i = 0; i < arr.Length; i++)
             {
-                if (i > m)
-                {
-                    isSteady = false;
-                    break;
-                }
+                arr[i] = arr[i] - m > 0 ? arr[i] - m : 0;
+                if (arr[i] > 0) isSteady = false;
             }
 
             if (isSteady) 
@@ -325,7 +323,7 @@ namespace HackerRank
         {
             foreach (var item in arr)
             {
-                if (item > m)
+                if (item > 0)
                 {
                     return false;
                 }
