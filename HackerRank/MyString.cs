@@ -289,5 +289,21 @@ namespace HackerRank
             }
             Console.WriteLine(anagram);
         }
+
+        public static void SteadyGene(string str, int m)
+        {
+            int r = 0;
+            int n = str.Length;
+            int[] arr = new int[256];
+            for (int i = 0; i < n; i++)
+            {
+                arr[(int)str[i]]++;
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = arr[i] - m < 0 ? 0 : arr[i] - m;
+            }
+            Console.WriteLine(r);
+        }
     }
 }
