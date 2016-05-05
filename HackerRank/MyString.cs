@@ -333,25 +333,78 @@ namespace HackerRank
 
         private static int GetMinLength(int[] arr, int n, int m, string str)
         {
-            int r = 0;
+            int e = 0;
             int ans = n;
-            for (int l = 0; l < n; l++) // 
+            for (int i = 0; i < n; i++)
             {
                 while (!IsFound(arr,m))
                 {
-                    if (r == n)
+                    if (e == n)
                     {
                         return ans;
                     }
-
-                    arr[str[r]]--;
-                    r++;
+                    arr[str[e]]--;
+                    e++;
                 }
-                ans = Math.Min(ans, r - l);
-                arr[str[l]]++;
+                ans = Math.Min(ans, e - i);
+                arr[str[i]]++;
             }
-
             return ans;
+        }
+
+        public static void SherlockAndAnagrams(string str)
+        {
+            int r = 0;
+            int n = str.Length;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i; j < n; j++)
+                {
+                    string ss = str.Substring(i, j - i + 1);
+                    if (HasAnagramPair(str, ss, i, j))
+                    {
+                        r++;
+                    }
+                }
+            }
+            Console.WriteLine(r);
+        }
+
+        private static bool HasAnagramPair(string str, string ss, int s, int e)
+        {
+            int n = str.Length;
+            int l = e - s + 1;
+
+            for (int i = s + 1; i <= n - l; i++)
+            {
+                if(IsAnagramPair(ss, str.Substring(i, l)))
+                {
+                    Console.WriteLine(String.Format("{0}/{1}", ss, str.Substring(i, l)));
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private static bool IsAnagramPair(string ss, string v)
+        {
+            int[] arr = new int[256];
+            foreach (var c in ss)
+            {
+                arr[c]++;
+            }
+            for (int i = 0; i < v.Length; i++)
+            {
+                arr[v[i]]--;
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] != 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

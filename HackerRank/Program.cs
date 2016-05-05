@@ -15,11 +15,11 @@ namespace HackerRank
             //var t = Convert.ToInt32(Console.ReadLine());
             //for (int i = 1; i <= t; i++)
             //{
-            //    var m = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
+            //    //var m = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
             //    var s = String.Join("", Console.ReadLine().Split());
-            //    MyString.SteadyGene(s, m / 4);
+            //    MyString.SherlockAndAnagrams(s);
             //}
-            MyString.SteadyGene("GAAATAAA", 2);
+            MyString.SherlockAndAnagrams("pvmupwjjjf");
         }
 
         //static void Main(string[] args)
