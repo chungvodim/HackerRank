@@ -292,18 +292,58 @@ namespace HackerRank
 
         public static void SteadyGene(string str, int m)
         {
-            int r = 0;
             int n = str.Length;
             int[] arr = new int[256];
             for (int i = 0; i < n; i++)
             {
                 arr[(int)str[i]]++;
             }
-            for (int i = 0; i < arr.Length; i++)
+
+            string t = "ACGT";
+            bool ok = true;
+            foreach (char c in t)
             {
-                arr[i] = arr[i] - m < 0 ? 0 : arr[i] - m;
+                if (arr[c] > m)
+                {
+                    ok = false;
+                    break;
+                }
             }
-            Console.WriteLine(r);
+
+            if (ok) 
+            { 
+                Console.WriteLine("0"); 
+            }
+            else
+            {
+                int a = GetMinLength(arr, n, m, str);
+                Console.WriteLine(a);
+            }
+
         }
+
+        private static int GetMinLength(int[] arr, int n, int m, string s)
+        {
+            int r = 0;
+            int ans = n;
+            for (int l = 0; l < n; l++) // 
+            {
+                while (arr['A'] > m || arr['C'] > m || arr['T'] > m || arr['G'] > m)
+                {
+                    if (r == n)
+                    {
+                        return ans;
+                    }
+
+                    arr[s[r]]--;
+                    r++;
+                }
+                ans = Math.Min(ans, r - l);
+                arr[s[l]]++;
+            }
+
+            return ans;
+        }
+
     }
 }

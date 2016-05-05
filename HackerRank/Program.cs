@@ -10,25 +10,22 @@ namespace HackerRank
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            var t = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= t; i++)
-            {
-                var str1 = String.Join("", Console.ReadLine().Split());
-                var str2 = String.Join("", Console.ReadLine().Split());
-                MyString.MakeItAnagram(str1, str2);
-            }
-        }
-
         //static void Main(string[] args)
         //{
-        //    string[] lines = File.ReadAllLines("input14.txt");
-        //    for (int i = 1; i < lines.Length; i++)
-        //    {
-        //        var result = MyString.PalindromeIndex(lines[i]);
-        //        Console.WriteLine(String.Format("{0}/{1}/{2}", result, lines[i].Length - result - 1, lines[i].Length));
-        //    }
+        //    //var t = Convert.ToInt32(Console.ReadLine());
+        //    //for (int i = 1; i <= t; i++)
+        //    //{
+        //    //    var m = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
+        //    //    var s = String.Join("", Console.ReadLine().Split());
+        //    //    MyString.SteadyGene(s, m / 4);
+        //    //}
+        //    MyString.SteadyGene("GAAATAAA", 2);
         //}
+
+        static void Main(string[] args)
+        {
+            string[] lines = File.ReadAllLines("input02.txt");
+            MyString.SteadyGene(lines[1], Convert.ToInt32(lines[0])/4);
+        }
     }
 }
