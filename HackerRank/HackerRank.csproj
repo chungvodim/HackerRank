@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm.cs" />
     <Compile Include="correctness-invariant.cs" />
     <Compile Include="MyImplementation.cs" />
     <Compile Include="MySort.cs" />

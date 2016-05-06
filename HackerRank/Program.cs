@@ -12,14 +12,19 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            var t = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= t; i++)
+            //var t = Convert.ToInt32(Console.ReadLine());
+            //for (int i = 1; i <= t; i++)
+            //{
+            //    //var m = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
+            //    var s = String.Join("", Console.ReadLine().Split());
+            //    MyString.SherlockAndAnagrams(s);
+            //}
+            while (true)
             {
-                //var m = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
-                var s = String.Join("", Console.ReadLine().Split());
-                MyString.SherlockAndAnagrams(s);
+                int m = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
+                int n = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
+                Console.WriteLine(String.Format("Largest divisor: {0}", Algorithm.FindLargestDivisor(m, n)));                
             }
-            MyString.SherlockAndAnagrams("pvmupwjjjf");
         }
 
         //static void Main(string[] args)
