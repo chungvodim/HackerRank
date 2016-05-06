@@ -361,16 +361,13 @@ namespace HackerRank
                 for (int j = i; j < n; j++)
                 {
                     string ss = str.Substring(i, j - i + 1);
-                    if (HasAnagramPair(str, ss, i, j))
-                    {
-                        r++;
-                    }
+                    HasAnagramPair(str, ss, i, j, ref r);
                 }
             }
             Console.WriteLine(r);
         }
 
-        private static bool HasAnagramPair(string str, string ss, int s, int e)
+        private static void HasAnagramPair(string str, string ss, int s, int e, ref int r)
         {
             int n = str.Length;
             int l = e - s + 1;
@@ -380,10 +377,9 @@ namespace HackerRank
                 if(IsAnagramPair(ss, str.Substring(i, l)))
                 {
                     Console.WriteLine(String.Format("{0}/{1}", ss, str.Substring(i, l)));
-                    return true;
+                    r++;
                 }
             }
-            return false;
         }
 
         private static bool IsAnagramPair(string ss, string v)
