@@ -12,13 +12,13 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            //var t = Convert.ToInt32(Console.ReadLine());
-            //for (int i = 1; i <= t; i++)
-            //{
-            //    //var m = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
-            //    var s = String.Join("", Console.ReadLine().Split());
-            //    MyString.SherlockAndAnagrams(s);
-            //}
+            var t = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= t; i++)
+            {
+                //var m = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
+                var s = String.Join("", Console.ReadLine().Split());
+                MyString.SherlockAndAnagrams(s);
+            }
             MyString.SherlockAndAnagrams("pvmupwjjjf");
         }
 
