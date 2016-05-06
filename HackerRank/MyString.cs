@@ -402,5 +402,53 @@ namespace HackerRank
             }
             return true;
         }
+
+        public static void ReverseShuffleMerge(string str)
+        {
+            int[] arr = new int[256];
+            bool isAdd = false;
+            Dictionary<char, int> d = new Dictionary<char, int>();
+
+            foreach (var c in str)
+            {
+                if (!isAdd)
+                {
+                    //arr[c]++;
+                    if (d.ContainsKey(c))
+                    {
+                        d[c]++;
+                    }
+                    else
+                    {
+                        d.Add(c, 1);
+                    }
+                    isAdd = true;
+                }
+                else
+                {
+                    isAdd = false;
+                }
+            }
+
+            d = d.OrderBy(x => x.Value).ToDictionary(x => x.Key, x=> x.Value);
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var item in d)
+            {
+                for (int i = 0; i < item.Value; i++)
+                {
+                    sb.Append(item.Key);
+                }
+            }
+
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    for (int j = 0; j < arr[i]; j++)
+            //    {
+            //        sb.Append((char)i);
+            //    }
+            //}
+            Console.WriteLine(sb.ToString());
+        }
     }
 }
