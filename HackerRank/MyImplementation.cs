@@ -155,25 +155,35 @@ namespace HackerRank
 
         public static void CutTheSticks(int[] ar,int n)
         {
-            int smallest = ar[0];
+            int smallest = 0;
+            int nextSmallest = ar[0];
             int left = n;
+            bool isFoundSmallest = false;
             StringBuilder sb = new StringBuilder();
             while (ar[n - 1] > 0)
             {
+                smallest = nextSmallest;
                 sb.AppendLine(left.ToString());
                 for (int i = 0; i < n; i++)
                 {
                     if (ar[i] > 0)
                     {
                         ar[i] = ar[i] - smallest;
+                        if(ar[i] > 0 && !isFoundSmallest)
+                        {
+                            nextSmallest = ar[i];
+                            isFoundSmallest = true;
+                        }
                         if (ar[i] <= 0)
                         {
                             left--;
                         }
                     }
                 }
+                isFoundSmallest = false;
             }
             Console.WriteLine(sb.ToString());
         }
+
     }
 }
