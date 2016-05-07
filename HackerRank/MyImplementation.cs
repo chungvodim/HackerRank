@@ -152,5 +152,28 @@ namespace HackerRank
 
             return (x != 0) && ((x & (x - 1)) == 0);
         }
+
+        public static void CutTheSticks(int[] ar,int n)
+        {
+            int smallest = ar[0];
+            int left = n;
+            StringBuilder sb = new StringBuilder();
+            while (ar[n - 1] > 0)
+            {
+                sb.AppendLine(left.ToString());
+                for (int i = 0; i < n; i++)
+                {
+                    if (ar[i] > 0)
+                    {
+                        ar[i] = ar[i] - smallest;
+                        if (ar[i] <= 0)
+                        {
+                            left--;
+                        }
+                    }
+                }
+            }
+            Console.WriteLine(sb.ToString());
+        }
     }
 }
