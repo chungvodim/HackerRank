@@ -185,5 +185,25 @@ namespace HackerRank
             Console.WriteLine(sb.ToString());
         }
 
+        public static void ChocolateFeast(int n, int c, int m)
+        {
+            int w = n / c;
+            w += GetBonus(w, m);
+            Console.WriteLine(w);
+        }
+
+        private static int GetBonus(int w, int m)
+        {
+            int r = w / m;
+            int mob = w % m;
+            if(w < m)
+            {
+                return 0;
+            }
+            else
+            {
+                return r + GetBonus(r + mob, m);
+            }
+        }
     }
 }
