@@ -228,16 +228,18 @@ namespace HackerRank
         private static bool IsSpecial(int t, int j, int k, int page)
         {
             bool isSpecial = false;
-            if(t < k)
+            int s = 0;
+            int e = 0;
+            if (t < k)
             {
-                int e = (j - 1) * k + t;
-                int s = e - t + 1;
+                e = (j - 1) * k + t;
+                s = e - t + 1;
                 if (page >= s && page <= e) isSpecial = true;
             }
             else
             {
-                int e = j * k;
-                int s = e - k + 1;
+                e = j * k;
+                s = e - k + 1;
                 if (page >= s && page <= e) isSpecial = true;
             }
             return isSpecial;
