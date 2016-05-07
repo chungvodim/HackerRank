@@ -450,5 +450,20 @@ namespace HackerRank
             //}
             Console.WriteLine(sb.ToString());
         }
+
+        public static void CommonChild(string str1, string str2)
+        {
+            int[] ar1 = new int[256];
+            int[] ar2 = new int[256];
+            foreach (var c in str1)
+            {
+                ar1[c]++;
+            }
+            foreach (var c in str2)
+            {
+                ar2[c]++;
+            }
+        }
+
     }
 }

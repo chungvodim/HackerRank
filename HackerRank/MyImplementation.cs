@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -89,6 +90,67 @@ namespace HackerRank
                     count = 0;
                 }
             }
+        }
+
+
+        public static void SherlockBeast(int n)
+        {
+            int x = n / 3;
+            int r = n % 3;
+            int y = 0;
+            while ((r + y * 3) % 5 != 0)
+            {
+                y++;
+                if (y > x)
+                {
+                    Console.WriteLine("-1");
+                    return;
+                }
+            }
+            int l = r + y * 3;
+            int m = n - l;//n = 3x(5's) + 5y(3's)
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < n; i++)
+            {
+                if (i >= m)
+                {
+                    sb.Append('3');
+                }
+                else
+                {
+                    sb.Append('5');
+                }
+            }
+            Console.WriteLine(sb.ToString());
+        }
+
+        public static void SherlockSquares(uint s, uint e)
+        {
+            int r = 0;
+            for (uint i = s; i <= e; i++)
+            {
+                //if (IsPowerOfTwo(i)) r++;
+                double x = Math.Sqrt(i);
+                if (x % 1 == 0)
+                {
+                    r++;
+                    i = (uint)Math.Pow(x + 1,2) - 1;
+                }
+            }
+            Console.WriteLine(r);
+        }
+
+        private static bool IsPowerOfTwo(uint x)
+        {
+            //while (((x % 2) == 0) && x > 1)
+            //{
+            //    x /= 2;
+            //}
+            //return (x == 1);
+
+            //return (x & (x - 1)) == 0;
+
+            return (x != 0) && ((x & (x - 1)) == 0);
         }
     }
 }
