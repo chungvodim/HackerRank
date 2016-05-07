@@ -12,13 +12,17 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            var t = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= t; i++)
-            {
-                //var s =String.Join("", Console.ReadLine().Split());
-                var ar = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
-                MyImplementation.ChocolateFeast(ar[0], ar[1], ar[2]);
-            }
+            //var t = Convert.ToInt32(Console.ReadLine());
+            //for (int i = 1; i <= t; i++)
+            //{
+            //    //var s =String.Join("", Console.ReadLine().Split());
+            //    var ar = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
+            //    MyImplementation.ChocolateFeast(ar[0], ar[1], ar[2]);
+            //}
+
+            var nk = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
+            var ar = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
+            MyImplementation.LisaBook(nk[0], nk[1], ar);
 
             //    //while (true)
             //    //{

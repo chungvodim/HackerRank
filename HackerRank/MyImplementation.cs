@@ -205,5 +205,42 @@ namespace HackerRank
                 return r + GetBonus(r + mob, m);
             }
         }
+
+        public static void LisaBook(int n, int k, int[] ar)
+        {
+            int page = 0;
+            int s = 0;
+            for (int i = 0; i < ar.Length; i++)
+            {
+                int t = ar[i];
+                int j = 0;
+                while (t > 0)
+                {
+                    j++;
+                    page++;
+                    if (IsSpecial(t, j, k, page)) s++;
+                    t = t - k;
+                }
+            }
+            Console.WriteLine(s);
+        }
+
+        private static bool IsSpecial(int t, int j, int k, int page)
+        {
+            bool isSpecial = false;
+            if(t < k)
+            {
+                int e = (j - 1) * k + t;
+                int s = e - t + 1;
+                if (page >= s && page <= e) isSpecial = true;
+            }
+            else
+            {
+                int e = j * k;
+                int s = e - k + 1;
+                if (page >= s && page <= e) isSpecial = true;
+            }
+            return isSpecial;
+        }
     }
 }
