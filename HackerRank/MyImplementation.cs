@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace HackerRank
@@ -248,12 +249,19 @@ namespace HackerRank
         internal static void GridSearch(string[] G, string[] P)
         {
             bool r = false;
-            for (int i = 0; i < P.Length; i++)
+            var p = P[0];
+            var pr = P.Length;
+            var pl = P[0].Length;
+            var gr = G.Length;
+            var gl = G[0].Length;
+            Regex regex = new Regex(p);
+            for (int i = 0; i < G.Length; i++)
             {
-                var p = P[i];
-                for (int j = 0; j < G.Length; j++)
+                var g = G[i];
+                var match = regex.Match(g);
+                if(match.Success == true)
                 {
-                    r = HasFound(i,j,P,G);
+                    int idx = match.Index;
                 }
             }
         }
