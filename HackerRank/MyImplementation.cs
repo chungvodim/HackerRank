@@ -244,5 +244,25 @@ namespace HackerRank
             }
             return isSpecial;
         }
+
+        internal static void GridSearch(string[] G, string[] P)
+        {
+            bool r = false;
+            for (int i = 0; i < P.Length; i++)
+            {
+                var p = P[i];
+                for (int j = 0; j < G.Length; j++)
+                {
+                    r = HasFound(i,j,P,G);
+                }
+            }
+        }
+
+        private static bool HasFound(int i, int j, string[] P, string[] G)
+        {
+            var p = P[i];
+            var g = G[j];
+            throw new NotImplementedException();
+        }
     }
 }
