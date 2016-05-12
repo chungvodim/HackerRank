@@ -73,5 +73,42 @@ namespace HackerRank
             }
             return r;
         }
+
+        private static Stack<string> st = new Stack<string>();
+        public static void TextEditor(string str)
+        {
+            if(str == "4")
+            {
+                st.Pop();
+            }
+            else
+            {
+                string[] ar = str.Split(' ');
+                var op = ar[0];
+                var arg = ar[1];
+                int n = 0;
+                switch (op)
+                {
+                    case "1":
+                        if(st.Count > 0)
+                        {
+                            st.Push(st.Peek() + arg);
+                        }
+                        else
+                        {
+                            st.Push(arg);
+                        }
+                        break;
+                    case "2":
+                        n = Convert.ToInt32(arg);
+                        st.Push(st.Peek().Remove(st.Peek().Length - n, n));
+                        break;
+                    case "3":
+                        n = Convert.ToInt32(arg);
+                        Console.WriteLine(st.Peek()[n - 1]);
+                        break;
+                }
+            }
+        }
     }
 }

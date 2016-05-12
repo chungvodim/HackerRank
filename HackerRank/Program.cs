@@ -10,42 +10,43 @@ namespace HackerRank
 {
     class Program
     {
-        //static void Main(string[] args)
-        //{
-        //    var t = Convert.ToInt32(Console.ReadLine());
-        //    for (int i = 1; i <= t; i++)
-        //    {
-        //        var str = String.Join("", Console.ReadLine().Split());
-        //        MyStack.BalancedParentheses(str);
-        //    }
-
-        //    //var nk = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
-        //    //var ar = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
-        //    //MyImplementation.LisaBook(nk[0], nk[1], ar);
-
-        //    //    //while (true)
-        //    //    //{
-        //    //    //    int x = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
-        //    //    //    int n = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
-        //    //    //    Console.WriteLine(String.Format("Largest divisor: {0}", Algorithm.FindLargestDivisor(x, n)));                
-        //    //    //}
-
-        //    //    //var n = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
-        //    //    //MyImplementation.SherlockSquares(3, 9);
-        //    //}
-
-        //}
-
         static void Main(string[] args)
         {
-            string[] lines = File.ReadAllLines("input02.txt");
-            int n = Convert.ToInt32(lines[0]);
-            for (int i = 1; i <= n; i++)
+            var t = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= t; i++)
             {
-                var s = lines[i];
-                MyStack.BalancedParentheses(s);
+                //var str = String.Join("", Console.ReadLine().Split());
+                var str = Console.ReadLine();
+                MyStack.TextEditor(str);
             }
+
+            //var nk = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
+            //var ar = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
+            //MyImplementation.LisaBook(nk[0], nk[1], ar);
+
+            //    //while (true)
+            //    //{
+            //    //    int x = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
+            //    //    int n = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
+            //    //    Console.WriteLine(String.Format("Largest divisor: {0}", Algorithm.FindLargestDivisor(x, n)));                
+            //    //}
+
+            //    //var n = Convert.ToInt32(String.Join("", Console.ReadLine().Split()));
+            //    //MyImplementation.SherlockSquares(3, 9);
+            //}
+
         }
+
+        //static void Main(string[] args)
+        //{
+        //    string[] lines = File.ReadAllLines("input02.txt");
+        //    int n = Convert.ToInt32(lines[0]);
+        //    for (int i = 1; i <= n; i++)
+        //    {
+        //        var s = lines[i];
+        //        MyStack.BalancedParentheses(s);
+        //    }
+        //}
 
         //static void Main(String[] args)
         //{
