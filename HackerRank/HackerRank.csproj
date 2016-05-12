@@ -48,6 +48,7 @@
     <Compile Include="correctness-invariant.cs" />
     <Compile Include="MyImplementation.cs" />
     <Compile Include="MySort.cs" />
+    <Compile Include="MyStack.cs" />
     <Compile Include="MyString.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
