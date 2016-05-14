@@ -30,29 +30,35 @@ namespace HackerRank
         public static void Partition(int n, int[] ar)
         {
             int idx = 0;
-            Stack<int> left = new Stack<int>();
-            Stack<int> right = new Stack<int>();
+            int ls = 0;
+            int rs = 0;
+            int[] l = new int[n];
+            int[] r = new int[n];
             var p = ar[idx];
             for (int i = 1; i < n; i++)
             {
                 if(p > ar[i])
                 {
-                    left.Push(ar[i]);
+                    l[ls] = ar[i];
+                    ls++;
                 }
                 else
                 {
-                    right.Push(ar[i]);
+                    r[rs] = ar[i];
+                    rs++;
                 }
             }
+            //Array.Resize(ref l, ls);
+            //Array.Resize(ref r, rs);
             StringBuilder sb = new StringBuilder();
-            for (int i = left.Count; i > 0; i--)
+            for (int i = 0; i < ls; i++)
             {
-                sb.Append(left.Pop() + " ");
+                sb.Append(l[i] + " ");
             }
             sb.Append(p + " ");
-            for (int i = right.Count; i > 0; i--)
+            for (int i = 0; i < rs; i++)
             {
-                sb.Append(right.Pop() + " ");
+                sb.Append(r[i] + " ");
             }
             Console.WriteLine(sb.ToString().Trim());
         }
