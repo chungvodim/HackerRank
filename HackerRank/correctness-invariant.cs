@@ -10,11 +10,10 @@ namespace HackerRank
     {
         public static void insertionSort(int[] A)
         {
-            var j = 0;
             for (var i = 1; i < A.Length; i++)
             {
                 var value = A[i];
-                j = i - 1;
+                var j = i - 1;
                 // Note : j >= 0
                 while (j >= 0 && value < A[j])
                 {

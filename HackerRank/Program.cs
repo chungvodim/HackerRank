@@ -22,7 +22,7 @@ namespace HackerRank
 
             var n = Convert.ToInt32(Console.ReadLine());
             var ar = Console.ReadLine().Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
-            MySort.Partition(n, ar);
+            MySort.QuickSort(n,ar);
 
             //    //while (true)
             //    //{

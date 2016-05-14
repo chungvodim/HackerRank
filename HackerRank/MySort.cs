@@ -10,11 +10,10 @@ namespace HackerRank
     {
         public static void insertionSort(int[] A, ref int runningTime)
         {
-            var j = 0;
             for (var i = 1; i < A.Length; i++)
             {
                 var value = A[i];
-                j = i - 1;
+                var j = i - 1;
                 // Note : j >= 0
                 while (j >= 0 && value < A[j])
                 {
@@ -24,17 +23,16 @@ namespace HackerRank
                 }
                 A[j + 1] = value;
             }
-            //Console.WriteLine(string.Join(" ", A));
+            Console.WriteLine(string.Join(" ", A));
         }
 
         public static void Partition(int n, int[] ar)
         {
-            int idx = 0;
             int ls = 0;
             int rs = 0;
             int[] l = new int[n];
             int[] r = new int[n];
-            var p = ar[idx];
+            var p = ar[0];
             for (int i = 1; i < n; i++)
             {
                 if(p > ar[i])
@@ -61,6 +59,45 @@ namespace HackerRank
                 sb.Append(r[i] + " ");
             }
             Console.WriteLine(sb.ToString().Trim());
+        }
+
+        public static void QuickSort(int n, int[] ar)
+        {
+            int ls = 0;
+            int rs = 0;
+            int[] l = new int[n];
+            int[] r = new int[n];
+            var p = ar[0];
+            for (int i = 1; i < n; i++)
+            {
+                if (p > ar[i])
+                {
+                    l[ls] = ar[i];
+                    ls++;
+                }
+                else
+                {
+                    r[rs] = ar[i];
+                    rs++;
+                }
+            }
+            if(ls <= 1)
+            {
+                if (ls == 1) Console.Write(l[0] + " ");
+            }
+            else
+            {
+                QuickSort(ls, l);
+            }
+            Console.Write(p + " ");
+            if (rs <= 1)
+            {
+                if (rs == 1) Console.Write(r[0] + " ");
+            }
+            else
+            {
+                QuickSort(rs, r);
+            }
         }
     }
 }
