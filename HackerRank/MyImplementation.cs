@@ -248,7 +248,7 @@ namespace HackerRank
 
         internal static void GridSearch(string[] G, string[] P)
         {
-            bool r = false;
+            //bool r = false;
             var p = P[0];
             var pr = P.Length;
             var pl = P[0].Length;
