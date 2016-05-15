@@ -37,19 +37,32 @@ namespace HackerRank
 
         //}
 
+        //static void Main(String[] args)
+        //{
+        //    int n;
+
+        //    n = int.Parse(Console.ReadLine());
+
+        //    String[] grid = new String[n];
+        //    for (int i = 0; i < n; i++)
+        //    {
+        //        grid[i] = Console.ReadLine();
+        //    }
+
+        //    BotBuilding.DisplayPathtoPrincess(n, grid);
+        //}
+
         static void Main(String[] args)
         {
             int n;
-
             n = int.Parse(Console.ReadLine());
-
-            String[] grid = new String[n];
             for (int i = 0; i < n; i++)
             {
-                grid[i] = Console.ReadLine();
+                int m = int.Parse(Console.ReadLine());
+                int[] ar = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
+                DynamicProgramming.MaximumSubarray(m,ar);
             }
 
-            BotBuilding.DisplayPathtoPrincess(n, grid);
         }
     }
 }
