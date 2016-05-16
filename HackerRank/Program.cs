@@ -52,16 +52,50 @@ namespace HackerRank
         //    BotBuilding.DisplayPathtoPrincess(n, grid);
         //}
 
+        //static void Main(String[] args)
+        //{
+        //    int n;
+        //    n = int.Parse(Console.ReadLine());
+        //    for (int i = 0; i < n; i++)
+        //    {
+        //        int m = int.Parse(Console.ReadLine());
+        //        int[] ar = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
+        //        DynamicProgramming.MaximumSubarray(m,ar);
+        //    }
+
+        //}
+
+        //static void Main(String[] args)
+        //{
+        //    int n;
+        //    n = int.Parse(Console.ReadLine());
+        //    for (int i = 0; i < n; i++)
+        //    {
+        //        int m = int.Parse(Console.ReadLine());
+        //        int[] ar = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
+        //        DynamicProgramming.MaximumSubarray(m, ar);
+        //    }
+
+        //}
+
         static void Main(String[] args)
         {
-            int n;
-            n = int.Parse(Console.ReadLine());
-            for (int i = 0; i < n; i++)
+            string[] s = Console.ReadLine().Split(' ');
+            int noVertices = Convert.ToInt32(s[0]);
+            int noEdges = Convert.ToInt32(s[1]);
+
+            Graph graph = new Graph(noVertices);
+            for (int i = 0; i < noEdges; i++)
             {
-                int m = int.Parse(Console.ReadLine());
-                int[] ar = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
-                DynamicProgramming.MaximumSubarray(m,ar);
+                string[] s1 = Console.ReadLine().Split(' ');
+
+                int start = Convert.ToInt32(s1[0]);
+                int end = Convert.ToInt32(s1[1]);
+
+                graph.addEdge(start, end);
             }
+
+            Console.WriteLine(graph.countNoRemovableEdges());
 
         }
     }

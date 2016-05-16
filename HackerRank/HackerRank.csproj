@@ -48,6 +48,7 @@
     <Compile Include="BotBuilding.cs" />
     <Compile Include="correctness-invariant.cs" />
     <Compile Include="DynamicProgramming.cs" />
+    <Compile Include="GraphTheory.cs" />
     <Compile Include="MyImplementation.cs" />
     <Compile Include="MySort.cs" />
     <Compile Include="MyStack.cs" />
