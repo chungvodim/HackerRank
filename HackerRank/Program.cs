@@ -37,20 +37,20 @@ namespace HackerRank
 
         //}
 
-        //static void Main(String[] args)
-        //{
-        //    int n;
+        static void Main(String[] args)
+        {
+            int n;
+            n = int.Parse(Console.ReadLine());
+            int[] mp = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
 
-        //    n = int.Parse(Console.ReadLine());
+            String[] grid = new String[n];
+            for (int i = 0; i < n; i++)
+            {
+                grid[i] = Console.ReadLine();
+            }
 
-        //    String[] grid = new String[n];
-        //    for (int i = 0; i < n; i++)
-        //    {
-        //        grid[i] = Console.ReadLine();
-        //    }
-
-        //    BotBuilding.DisplayPathtoPrincess(n, grid);
-        //}
+            BotBuilding.DisplayNextMovetoPrincess(n, grid);
+        }
 
         //static void Main(String[] args)
         //{
@@ -78,25 +78,25 @@ namespace HackerRank
 
         //}
 
-        static void Main(String[] args)
-        {
-            string[] s = Console.ReadLine().Split(' ');
-            int noVertices = Convert.ToInt32(s[0]);
-            int noEdges = Convert.ToInt32(s[1]);
+        //static void Main(String[] args)
+        //{
+        //    string[] s = Console.ReadLine().Split(' ');
+        //    int noVertices = Convert.ToInt32(s[0]);
+        //    int noEdges = Convert.ToInt32(s[1]);
 
-            Graph graph = new Graph(noVertices);
-            for (int i = 0; i < noEdges; i++)
-            {
-                string[] s1 = Console.ReadLine().Split(' ');
+        //    Graph graph = new Graph(noVertices);
+        //    for (int i = 0; i < noEdges; i++)
+        //    {
+        //        string[] s1 = Console.ReadLine().Split(' ');
 
-                int start = Convert.ToInt32(s1[0]);
-                int end = Convert.ToInt32(s1[1]);
+        //        int start = Convert.ToInt32(s1[0]);
+        //        int end = Convert.ToInt32(s1[1]);
 
-                graph.addEdge(start, end);
-            }
+        //        graph.AddEdgeAndVert(start, end);
+        //    }
 
-            Console.WriteLine(graph.countNoRemovableEdges());
+        //    Console.WriteLine(graph.countNoRemovableEdges());
 
-        }
+        //}
     }
 }
