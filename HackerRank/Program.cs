@@ -37,20 +37,20 @@ namespace HackerRank
 
         //}
 
-        static void Main(String[] args)
-        {
-            int n;
-            n = int.Parse(Console.ReadLine());
-            int[] mp = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
+        //static void Main(String[] args)
+        //{
+        //    int n;
+        //    n = int.Parse(Console.ReadLine());
+        //    int[] mp = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
 
-            String[] grid = new String[n];
-            for (int i = 0; i < n; i++)
-            {
-                grid[i] = Console.ReadLine();
-            }
+        //    String[] grid = new String[n];
+        //    for (int i = 0; i < n; i++)
+        //    {
+        //        grid[i] = Console.ReadLine();
+        //    }
 
-            BotBuilding.DisplayNextMovetoPrincess(n, grid);
-        }
+        //    BotBuilding.DisplayNextMovetoPrincess(n, grid);
+        //}
 
         //static void Main(String[] args)
         //{
@@ -98,5 +98,19 @@ namespace HackerRank
         //    Console.WriteLine(graph.countNoRemovableEdges());
 
         //}
+
+        static void Main(String[] args)
+        {
+            String temp = Console.ReadLine();
+            String[] position = temp.Split(' ');
+            int[] pos = new int[2];
+            String[] board = new String[5];
+            for (int i = 0; i < 5; i++)
+            {
+                board[i] = Console.ReadLine();
+            }
+            for (int i = 0; i < 2; i++) pos[i] = Convert.ToInt32(position[i]);
+            BotBuilding.NextMove(pos[0], pos[1], board);
+        }
     }
 }

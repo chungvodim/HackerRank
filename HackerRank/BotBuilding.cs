@@ -107,5 +107,48 @@ namespace HackerRank
                 }
             }
         }
+
+        internal static void NextMove(int v1, int v2, string[] board)
+        {
+            int[] dp = new int[2];
+            for (int i = 0; i < board.Length; i++)
+            {
+                int c = board[i].IndexOf("d");
+                if (c >= 0)
+                {
+                    //Console.WriteLine("{0}/{1}", i, m);
+                    dp[0] = i; dp[1] = c;
+                    break;
+                }
+            }
+            int h = dp[1] - v2;
+            bool r = h > 0 ? true : false;
+            int v = dp[0] - v1;
+            bool d = v > 0 ? true : false;
+
+            if (d && Math.Abs(v) > 0)
+            {
+                Console.WriteLine("DOWN");
+                return;
+            }
+            else if(Math.Abs(v) > 0)
+            {
+                Console.WriteLine("UP");
+                return;
+            }
+
+            if (r && Math.Abs(h) > 0)
+            {
+                Console.WriteLine("RIGHT");
+                return;
+            }
+            else if(Math.Abs(h) > 0)
+            {
+                Console.WriteLine("LEFT");
+                return;
+            }
+
+            Console.WriteLine("CLEAN");
+        }
     }
 }
